@@ -1,8 +1,11 @@
 name: Scheduled Python Script
 
 on:
+  push:
+    paths:
+      - '**/*'  # 当仓库有任何文件变动时触发
   schedule:
-    - cron: "0 8 * * *"
+    - cron: "0 8 * * 1-5"  # 每周一至周五的上午8点触发
 
 jobs:
   run_python_script:
